@@ -8,6 +8,7 @@
   <title>Pizzeria</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -138,7 +139,33 @@
 
       </article> <!-- .product -->
     </script>
-
+    <script type="text/x-handlebars-template" id="template-cart-product">
+      <li class="cart__product">
+        <div class="cart__product-info">
+          <h3>{{name}}</h3>
+          <div class="cart__product-details">
+            <div class="cart__product-amount">Amount: {{amount}}</div>
+            <div class="cart__product-price">Total price: ${{price}}</div>
+            <div class="cart__product-params">
+              <h4>Options:</h4>
+              <ul>
+                {{#each params}}
+                  <li>{{this.label}}: {{this.value}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="cart__product-controls">
+          <button class="cart__product-edit">
+            <i class="fas fa-pen"></i>
+          </button>
+          <button class="cart__product-remove">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </li>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="js/functions.js"></script>
   <script src="js/data.js"></script>
