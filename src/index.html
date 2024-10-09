@@ -36,15 +36,15 @@
               <ul class="cart__order-price">
                 <li>
                   <span class="cart__order-price-name">Subtotal:</span>
-                  <span class="cart__order-price-sum">$0</span>
+                  <span class="cart__order-price-sum">$<span class="subtotal-price">0</span></span>
                 </li>
                 <li>
                   <span class="cart__order-price-name">Delivery:</span>
-                  <span class="cart__order-price-sum">$0</span>
+                  <span class="cart__order-price-sum">$<span class="delivery-fee">0</span></span>
                 </li>
                 <li>
                   <span class="cart__order-price-name"><strong>Total:</strong></span>
-                  <span class="cart__order-price-sum"><strong>$0</strong></span>
+                  <span class="cart__order-price-sum"><strong>$<span class="total-price">0</span></strong></span>
                 </li>
               </ul>
               <div class="cart__order-confirmation">
@@ -144,7 +144,14 @@
         <div class="cart__product-info">
           <h3>{{name}}</h3>
           <div class="cart__product-details">
-            <div class="cart__product-amount">Amount: {{amount}}</div>
+            <div class="cart__product-amount">
+              Amount: 
+              <div class="widget-amount">
+                <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
+                <input type="text" name="amount" value="{{amount}}">
+                <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
+              </div>
+            </div>
             <div class="cart__product-price">Total price: ${{price}}</div>
             <div class="cart__product-params">
               <h4>Options:</h4>
